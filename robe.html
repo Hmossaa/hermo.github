@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robes en Promotion - Hermosa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf9f6;
+      margin: 0;
+      padding: 0;
+      color: #2e2e2e;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b38b59;
+      font-family: 'Playfair Display', serif;
+      margin: 40px 0;
+      font-size: 2.8em;
+    }
+    .return-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #a67b5b;
+      font-weight: bold;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px 60px;
+    }
+
+    .product-card {
+      position: relative;
+      width: 250px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      padding-top: 130%;
+      overflow: hidden;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 12px;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .product-img.second {
+      opacity: 0;
+    }
+
+    .product-card:hover .product-img.first {
+      opacity: 0;
+    }
+
+    .product-card:hover .product-img.second {
+      opacity: 1;
+    }
+
+    .promo-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #d14b4b;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      border-radius: 5px;
+      z-index: 2;
+    }
+
+    .price-details {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .old-price {
+      font-size: 1em;
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .new-price {
+      font-size: 1.3em;
+      color: #b38b59;
+      font-weight: bold;
+      margin: 5px 0;
+      display: block;
+    }
+
+    .discount {
+      font-size: 1em;
+      color: #d14b4b;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .popup-notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #b38b59;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(20px); }
+      20% { opacity: 1; transform: translateY(0); }
+      80% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      padding: 10px 18px;
+      background-color: #b38b59;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #a07645;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <a href="promotion.html" class="return-home">← Promo</a>
+
+  <h1>Nos Robes en Promotion</h1>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="image-container">
+        <div class="promo-badge">PROMO</div>
+        <img src="R.jpg" alt="Robe 1" class="product-img first">
+        <img src="R1 (3).jpg" alt="Robe 1 portée" class="product-img second">
+      </div>
+      <div class="price-details">
+        <span class="old-price">3600 DA</span>
+        <span class="new-price">2160 DA</span>
+        <span class="discount">-40%</span>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="image-container">
+        <div class="promo-badge">PROMO</div>
+        <img src="R2 (2).jpg" alt="Robe 2" class="product-img first">
+        <img src="R3 (2).jpg" alt="Robe 2 portée" class="product-img second">
+      </div>
+      <div class="price-details">
+        <span class="old-price">3300 DA</span>
+        <span class="new-price">2310 DA</span>
+        <span class="discount">-30%</span>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="image-container">
+        <div class="promo-badge">PROMO</div>
+        <img src="R4.jpg" alt="Robe 3" class="product-img first">
+        <img src="R5.jpg" alt="Robe 3 portée" class="product-img second">
+      </div>
+      <div class="price-details">
+        <span class="old-price">3900 DA</span>
+        <span class="new-price">2730 DA</span>
+        <span class="discount">-30%</span>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="image-container">
+        <div class="promo-badge">PROMO</div>
+        <img src="R6.jpg" alt="Robe 4" class="product-img first">
+        <img src="R7.jpg" alt="Robe 4 portée" class="product-img second">
+      </div>
+      <div class="price-details">
+        <span class="old-price">3700 DA</span>
+        <span class="new-price">2590 DA</span>
+        <span class="discount">-30%</span>
+        <button class="add-to-cart">Ajouter au Panier</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-notification" id="popup">Article ajouté au panier !</div>
+
+  <script>
+    // Fonction pour afficher la notification popup
+    function showPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      
+      // Réinitialise l'animation
+      popup.style.animation = 'none';
+      void popup.offsetWidth; // Force le recalcul
+      popup.style.animation = 'fadeInOut 3s ease-in-out';
+      
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000);
+    }
+
+    // Fonction pour calculer le pourcentage de réduction
+    function calculateDiscount(oldPrice, newPrice) {
+      return Math.round(((oldPrice - newPrice) / oldPrice) * 100) + '%';
+    }
+
+    // Fonction pour ajouter un produit au panier
+    function addToCart(productName, price, originalPrice, discount, imageUrl) {
+      // Récupère le panier existant ou initialise un nouveau
+      let cart = JSON.parse(localStorage.getItem('panier')) || [];
+      
+      // Crée l'objet produit
+      const product = {
+        id: Date.now(), // Identifiant unique
+        nom: productName,
+        prix: price,
+        prixOriginal: originalPrice,
+        reduction: discount,
+        image: imageUrl,
+        categorie: "Robes",
+        quantite: 1,
+        dateAjout: new Date().toISOString()
+      };
+      
+      // Vérifie si le produit existe déjà dans le panier
+      const existingProductIndex = cart.findIndex(item => item.nom === productName);
+      
+      if (existingProductIndex >= 0) {
+        // Si le produit existe, augmente la quantité
+        cart[existingProductIndex].quantite += 1;
+      } else {
+        // Sinon, ajoute le nouveau produit
+        cart.push(product);
+      }
+      
+      // Sauvegarde dans le localStorage
+      localStorage.setItem('panier', JSON.stringify(cart));
+      
+      // Affiche la notification
+      showPopup();
+      
+      console.log('Produit ajouté:', product);
+      console.log('Panier actuel:', cart);
+    }
+
+    // Initialisation des événements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sélectionne tous les boutons "Ajouter au panier"
+      const addButtons = document.querySelectorAll('.add-to-cart');
+      
+      // Ajoute un écouteur d'événement à chaque bouton
+      addButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+          // Trouve la carte produit parente
+          const productCard = this.closest('.product-card');
+          
+          // Récupère les informations du produit
+          const productName = `Robe ${index + 1}`;
+          const price = parseFloat(productCard.querySelector('.new-price').textContent.replace(' DA', '').trim());
+          const originalPrice = parseFloat(productCard.querySelector('.old-price').textContent.replace(' DA', '').trim());
+          const discount = calculateDiscount(originalPrice, price);
+          const imageUrl = productCard.querySelector('.product-img.first').src;
+          
+          // Ajoute le produit au panier
+          addToCart(productName, price, originalPrice, discount, imageUrl);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
